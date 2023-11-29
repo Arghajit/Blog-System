@@ -40,8 +40,8 @@ def new(request):
         email=obj1.email
         address=obj1.address
         type=obj1.type
-        # domain='https://logincheck-apmj.onrender.com'
-        url=str('http://127.0.0.1:8000'+obj1.picture.url)
+        # domain='https://blogupdate-bywb.onrender.com'
+        url=str('https://blogupdate-bywb.onrender.com'+obj1.picture.url)
         if type=='Doctor':
             flag=1
             return render(request,"new.html",{'fname':fname,'lname':lname,'email':email,'address':address,'type':type,'url':url,'flag':flag})
@@ -60,9 +60,9 @@ def upload(request):
     content=request.POST.get('content')
     obj=Blog(title=title,image=image,category=category,summary=summary,content=content)
     obj.save()
-    obj.url=str('http://127.0.0.1:8000'+obj.image.url)
+    obj.url=str('https://blogupdate-bywb.onrender.com'+obj.image.url)
     obj.save()
-    return redirect("http://127.0.0.1:8000/login")
+    return redirect("https://blogupdate-bywb.onrender.com/login")
 
 def viewblog(request):
     mental=Blog.objects.filter(category='Mental').all()
