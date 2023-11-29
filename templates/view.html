@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>VSE</title>
+    <style>
+        /* Import Google font - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            padding: 0px 35px;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #93FFE8;
+        }
+
+        .main {
+            display: flex;
+            padding: 0 35px;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #93FFE8;
+            flex-direction: column;
+
+        }
+
+        /* .container {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+} */
+
+        .content {
+            text-align: center;
+            padding: 35px;
+            /* Center text within the div */
+        }
+
+        .wrapper {
+            max-width: 1500px;
+            width: 100%;
+            position: relative;
+        }
+
+        .wrapper i {
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            background: #93FFE8;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+        }
+
+        .wrapper i:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+        .wrapper i:first-child {
+            left: -22px;
+        }
+
+        .wrapper i:last-child {
+            right: -22px;
+        }
+
+        .wrapper .carousel {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 1700px;
+            /* display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: calc((100% / 3) - 12px);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;*/
+            gap: 16px;
+            /* border-radius: 8px;
+            scroll-behavior: smooth;
+            scrollbar-width: none; */
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel.no-transition {
+            scroll-behavior: auto;
+        }
+
+        .carousel.dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+        .carousel :where(.card, .img) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel .card {
+            scroll-snap-align: start;
+            width: 1700px;
+            height: 342px;
+            list-style: none;
+            background: #93FFE8;
+            cursor: pointer;
+            padding-bottom: 15px;
+            justify-content: space-evenly;
+            flex-direction: row;
+            border-radius: 8px;
+            border: 4px solid #52505e;
+            margin-left: -10%;
+        }
+        .carousel .card .profiling{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .carousel .card .img {
+            background: #52505e;
+            height: 148px;
+            width: 148px;
+            border-radius: 50%;
+        }
+
+        .card .img img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #93FFE8;
+        }
+
+        .carousel .card h2 {
+            font-weight: 500;
+            font-size: 1.56rem;
+            margin: 30px 0 5px;
+        }
+
+        .carousel .card span {
+            color: #6A6D78;
+            font-size: 1.31rem;
+        }
+
+        .button {
+            border: none;
+            font-size: 16px;
+            color: #93FFE8;
+            padding: 8px 16px;
+            background-color: #52505e;
+            border-radius: 6px;
+            margin: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.75em;
+            font-weight: 800;
+            color: black;
+            padding: 40px 48px;
+            text-align: center;
+        }
+
+        .logo span {
+            color: #52505e;
+        }
+        th{
+            font-size: larger;
+        }
+
+        /* .button:hover{
+    background: #265DF2;
+} */
+
+        @media screen and (max-width: 900px) {
+            .wrapper .carousel {
+                grid-auto-columns: calc((100% / 2) - 9px);
+            }
+
+            .logo {
+                margin: -48px -48px 48px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper .carousel {
+                grid-auto-columns: 100%;
+            }
+
+            .logo {
+                margin: -48px -48px 48px;
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <nav>
+                <div class="logo"><h1 style="color: #6A6D78;"><span>Blogs</span></h1></div>
+            </nav>
+        </div>
+            {% if mental %}
+                <div class="content">
+                    <h1>>>Mental Health Blogs<<</h1>
+                </div>
+                <div class="wrapper">
+                    <ul class="carousel">
+                        {% for i in mental %}
+                        <li class="card" style="background-color:#A9A9A9;">
+                            <div class="effective" style="width: 300px;height: 336px;justify-content: center; position: relative;top:2%;left:-11.7%;background-color: #52505e;" >
+                                <div class="profiling" style="height:246px;width: 156.17px; display: flex;flex-direction: column;flex-wrap: wrap;position: relative;top: 15%;left:20%">
+                                    <div class="img"><img src={{i.url}} alt="img" draggable="false"></div>
+                                </div>
+                            </div>
+                            <div class="desc" style="display: flex; flex-direction: column;flex-wrap: wrap;justify-content: center;text-align: center; height:300px; width: 800px;word-wrap: break-word;overflow-wrap: break-word;">
+                                <table style="width: 100%;">
+                                    <tr style="text-align:left;">
+                                        <th>Title:-</th>
+                                        <th>{{i.title}}</th>
+                                    </tr>
+                                    <tr style="text-align:left;">
+                                        <th>Summary:-</th>
+                                        <th>{{i.summary}}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if heart %}
+                <div class="content">
+                    <h1>>> Heart Disease Blogs<<</h1>
+                </div>
+                <div class="wrapper">
+                    <ul class="carousel">
+                        {% for i in heart %}
+                        <li class="card" style="background-color:#A9A9A9;">
+                            <div class="effective" style="width: 300px;height: 336px;justify-content: center; position: relative;top:2%;left:-11.7%;background-color: #52505e;" >
+                                <div class="profiling" style="height:246px;width: 156.17px; display: flex;flex-direction: column;flex-wrap: wrap;position: relative;top: 15%;left:20%">
+                                    <div class="img"><img src={{i.url}} alt="img" draggable="false"></div>
+                                </div>
+                            </div>
+                            <div class="desc" style="display: flex; flex-direction: column;flex-wrap: wrap;justify-content: center;text-align: center; height:300px; width: 800px;word-wrap: break-word;overflow-wrap: break-word;">
+                                <table style="width: 100%;">
+                                    <tr style="text-align:left;">
+                                        <th>Title:-</th>
+                                        <th>{{i.title}}</th>
+                                    </tr>
+                                    <tr style="text-align:left;">
+                                        <th>Summary:-</th>
+                                        <th>{{i.summary}}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if covid %}
+                <div class="content">
+                    <h1>>>Covid 19 Blogs<<</h1>
+                </div>
+                <div class="wrapper">
+                    <ul class="carousel">
+                        {% for i in covid %}
+                        <li class="card" style="background-color:#A9A9A9;">
+                            <div class="effective" style="width: 300px;height: 336px;justify-content: center; position: relative;top:2%;left:-11.7%;background-color: #52505e;" >
+                                <div class="profiling" style="height:246px;width: 156.17px; display: flex;flex-direction: column;flex-wrap: wrap;position: relative;top: 15%;left:20%">
+                                    <div class="img"><img src={{i.url}} alt="img" draggable="false"></div>
+                                </div>
+                            </div>
+                            <div class="desc" style="display: flex; flex-direction: column;flex-wrap: wrap;justify-content: center;text-align: center; height:300px; width: 800px;word-wrap: break-word;overflow-wrap: break-word;">
+                                <table style="width: 100%;">
+                                    <tr style="text-align:left;">
+                                        <th>Title:-</th>
+                                        <th>{{i.title}}</th>
+                                    </tr>
+                                    <tr style="text-align:left;">
+                                        <th>Summary:-</th>
+                                        <th>{{i.summary}}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if immune %}
+                <div class="content">
+                    <h1>>>Immunization Blogs<<</h1>
+                </div>
+                <div class="wrapper">
+                    <ul class="carousel">
+                        {% for i in immune %}
+                        <li class="card" style="background-color:#A9A9A9;">
+                            <div class="effective" style="width: 300px;height: 336px;justify-content: center; position: relative;top:2%;left:-11.7%;background-color: #52505e;" >
+                                <div class="profiling" style="height:246px;width: 156.17px; display: flex;flex-direction: column;flex-wrap: wrap;position: relative;top: 15%;left:20%">
+                                    <div class="img"><img src={{i.url}} alt="img" draggable="false"></div>
+                                </div>
+                            </div>
+                            <div class="desc" style="display: flex; flex-direction: column;flex-wrap: wrap;justify-content: center;text-align: center; height:300px; width: 800px;word-wrap: break-word;overflow-wrap: break-word;">
+                                <table style="width: 100%;">
+                                    <tr style="text-align:left;">
+                                        <th>Title:-</th>
+                                        <th>{{i.title}}</th>
+                                    </tr>
+                                    <tr style="text-align:left;">
+                                        <th>Summary:-</th>
+                                        <th>{{i.summary}}</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+    </div>
+
+
+</body>
+
+</html>
